@@ -13,7 +13,7 @@ To run this application:
 Clone this repository:
 
 ```
-git clone https://github.com/your-username/todo-app.git
+git clone https://github.com/realbakari/TODO-App.git
 ```
 Install the required packages:
 
