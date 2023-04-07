@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo App</title>
+    <title>Delete Task</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
-    <h1>Todo App</h1>
+    <h1>Delete Task</h1>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul class="flashes">
@@ -15,18 +15,11 @@
     </ul>
     {% endif %}
     {% endwith %}
-    <ul>
-        {% for task in tasks %}
-            <li>{{ task }}</li>
-        {% endfor %}
-    </ul>
-    <form action="/add" method="post">
-        <input type="text" name="task">
-        <button type="submit">Add Task</button>
-    </form>
-    <form action="/delete" method="post">
+    <form action="{{ url_for('delete') }}" method="post">
         <input type="text" name="task">
         <button type="submit">Delete Task</button>
     </form>
+    <br>
+    <a href="{{ url_for('index') }}">Back to tasks</a>
 </body>
 </html>
